@@ -1,0 +1,241 @@
+<ERROR_INFO>
+errID:8
+errStr:Undefined index: id
+errFile:F:\Apache2.2\htdocs\gangangshop\controllers\simple.php
+errLine:107
+errTime:14-03-20 22:28:04
+##出错时变量的值：##
+array (
+  'email' => 'alucard2630961@126.com',
+  'username' => 'yoursite',
+  'password' => 'yoursite',
+  'repassword' => 'yoursite',
+  'invcode' => 'yoursite',
+  'captcha' => 'ohuio',
+  'callback' => '/simple/login',
+  'message' => '',
+  'parentid' => 0,
+  'userObj' => 
+  IModel::__set_state(array(
+     'db' => 
+    IMysql::__set_state(array(
+       'linkRes' => NULL,
+    )),
+     'tableName' => 'ict_user',
+     'tableData' => 
+    array (
+    ),
+  )),
+  'where' => 'invcode = "yoursite"',
+  'userRow' => 
+  array (
+  ),
+  'invuserRow' => 
+  array (
+  ),
+)
+<\ERROR_INFO>
+<ERROR_INFO>
+errID:8
+errStr:Undefined index: id
+errFile:F:\Apache2.2\htdocs\gangangshop\controllers\simple.php
+errLine:107
+errTime:14-03-20 22:29:22
+##出错时变量的值：##
+array (
+  'email' => 'alucard2630961@126.com',
+  'username' => 'yoursite',
+  'password' => 'yoursite',
+  'repassword' => 'yoursite',
+  'invcode' => 'yoursite',
+  'captcha' => 'ohuio',
+  'callback' => '/simple/login',
+  'message' => '',
+  'parentid' => 0,
+  'userObj' => 
+  IModel::__set_state(array(
+     'db' => 
+    IMysql::__set_state(array(
+       'linkRes' => NULL,
+    )),
+     'tableName' => 'ict_user',
+     'tableData' => 
+    array (
+    ),
+  )),
+  'where' => 'invcode = "yoursite"',
+  'userRow' => 
+  array (
+  ),
+  'invuserRow' => 
+  array (
+  ),
+)
+<\ERROR_INFO>
+<ERROR_INFO>
+errID:8
+errStr:Use of undefined constant aa - assumed 'aa'
+errFile:F:\Apache2.2\htdocs\gangangshop\controllers\simple.php
+errLine:115
+errTime:14-03-20 22:29:22
+##出错时变量的值：##
+array (
+  'email' => 'alucard2630961@126.com',
+  'username' => 'yoursite',
+  'password' => 'yoursite',
+  'repassword' => 'yoursite',
+  'invcode' => 'yoursite',
+  'captcha' => 'ohuio',
+  'callback' => '/simple/login',
+  'message' => '',
+  'parentid' => NULL,
+  'userObj' => 
+  IModel::__set_state(array(
+     'db' => 
+    IMysql::__set_state(array(
+       'linkRes' => NULL,
+    )),
+     'tableName' => 'ict_user',
+     'tableData' => 
+    array (
+    ),
+  )),
+  'where' => 'invcode = "yoursite"',
+  'userRow' => 
+  array (
+  ),
+  'invuserRow' => 
+  array (
+  ),
+)
+<\ERROR_INFO>
+<ERROR_INFO>
+errID:8
+errStr:Undefined variable: aa
+errFile:F:\Apache2.2\htdocs\gangangshop\controllers\simple.php
+errLine:121
+errTime:14-03-20 22:29:22
+##出错时变量的值：##
+array (
+  'email' => 'alucard2630961@126.com',
+  'username' => 'yoursite',
+  'password' => 'yoursite',
+  'repassword' => 'yoursite',
+  'invcode' => 'yoursite',
+  'captcha' => 'ohuio',
+  'callback' => '/simple/login',
+  'message' => '',
+  'parentid' => NULL,
+  'userObj' => 
+  IModel::__set_state(array(
+     'db' => 
+    IMysql::__set_state(array(
+       'linkRes' => NULL,
+    )),
+     'tableName' => 'ict_user',
+     'tableData' => 
+    array (
+    ),
+  )),
+  'where' => 'invcode = "yoursite"',
+  'userRow' => 
+  array (
+  ),
+  'invuserRow' => 
+  array (
+  ),
+  'myinvcode' => 'aa',
+)
+<\ERROR_INFO>
+<ERROR_INFO>
+errID:8
+errStr:Undefined variable: aaaaaa
+errFile:F:\Apache2.2\htdocs\gangangshop\controllers\simple.php
+errLine:121
+errTime:14-03-20 22:34:10
+##出错时变量的值：##
+array (
+  'email' => 'alucard2630963@126.com',
+  'username' => 'yoursite3',
+  'password' => '2fbdb71d',
+  'repassword' => '2fbdb71d',
+  'invcode' => '2fbdb71d',
+  'captcha' => 'nosiv',
+  'callback' => '/simple/login',
+  'message' => '',
+  'parentid' => '2',
+  'userObj' => 
+  IModel::__set_state(array(
+     'db' => 
+    IMysql::__set_state(array(
+       'linkRes' => NULL,
+    )),
+     'tableName' => 'ict_user',
+     'tableData' => 
+    array (
+    ),
+  )),
+  'where' => 'invcode = "2fbdb71d"',
+  'userRow' => 
+  array (
+  ),
+  'invuserRow' => 
+  array (
+    'id' => '2',
+    'username' => 'sunsun',
+    'password' => '2fbdb71d344847ba1a56067a6238e775',
+    'email' => 'alucard2630962@126.com',
+    'head_ico' => NULL,
+    'invcode' => '2fbdb71d',
+    'parentid' => '2',
+    'parentinvcode' => '2fbdb71d',
+  ),
+  'myinvcode' => 'aaaaaa',
+)
+<\ERROR_INFO>
+<ERROR_INFO>
+errID:8
+errStr:Undefined variable: 9e609877aeb589277e876b6c
+errFile:F:\Apache2.2\htdocs\gangangshop\controllers\simple.php
+errLine:121
+errTime:14-03-20 22:35:10
+##出错时变量的值：##
+array (
+  'email' => 'alucard2630964@126.com',
+  'username' => 'yoursite4',
+  'password' => '2fbdb71d',
+  'repassword' => '2fbdb71d',
+  'invcode' => '2fbdb71d',
+  'captcha' => 'aluva',
+  'callback' => '/ucenter/index',
+  'message' => '',
+  'parentid' => '2',
+  'userObj' => 
+  IModel::__set_state(array(
+     'db' => 
+    IMysql::__set_state(array(
+       'linkRes' => NULL,
+    )),
+     'tableName' => 'ict_user',
+     'tableData' => 
+    array (
+    ),
+  )),
+  'where' => 'invcode = "2fbdb71d"',
+  'userRow' => 
+  array (
+  ),
+  'invuserRow' => 
+  array (
+    'id' => '2',
+    'username' => 'sunsun',
+    'password' => '2fbdb71d344847ba1a56067a6238e775',
+    'email' => 'alucard2630962@126.com',
+    'head_ico' => NULL,
+    'invcode' => '2fbdb71d',
+    'parentid' => '2',
+    'parentinvcode' => '2fbdb71d',
+  ),
+  'myinvcode' => '9e609877aeb589277e876b6c',
+)
+<\ERROR_INFO>

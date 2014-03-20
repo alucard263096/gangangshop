@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 	$siteConfig = new Config("site_config");
 	$callback   = IReq::get('callback') ? urlencode(IFilter::act(IReq::get('callback'),'url')) : '';
 ?>
@@ -9,10 +9,10 @@
 	<title><?php echo $siteConfig->name;?></title>
 	<link type="image/x-icon" href="favicon.ico" rel="icon">
 	<link rel="stylesheet" href="<?php echo IUrl::creatUrl("")."views/".$this->theme."/skin/".$this->skin."/css/index.css";?>" />
-	<script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/jquery/jquery-1.9.0.min.js"></script><script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/autovalidate/validate.js"></script><link rel="stylesheet" type="text/css" href="/iwebshoptest/runtime/systemjs/autovalidate/style.css" />
-	<script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/form/form.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/artdialog/artDialog.js"></script><script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/artdialog/plugins/iframeTools.js"></script><link rel="stylesheet" type="text/css" href="/iwebshoptest/runtime/systemjs/artdialog/skins/default.css" />
+	<script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/jquery/jquery-1.9.0.min.js"></script><script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/autovalidate/validate.js"></script><link rel="stylesheet" type="text/css" href="/gangangshop/runtime/systemjs/autovalidate/style.css" />
+	<script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/form/form.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/artdialog/artDialog.js"></script><script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/artdialog/plugins/iframeTools.js"></script><link rel="stylesheet" type="text/css" href="/gangangshop/runtime/systemjs/artdialog/skins/default.css" />
 	<script type='text/javascript' src="<?php echo IUrl::creatUrl("")."views/".$this->theme."/javascript/common.js";?>"></script>
 	<script type='text/javascript' src='<?php echo IUrl::creatUrl("")."views/".$this->theme."/javascript/site.js";?>'></script>
 </head>
@@ -30,7 +30,7 @@
 			<?php if($this->user){?>
 			<?php echo isset($this->user['username'])?$this->user['username']:"";?>您好，欢迎您来到<?php echo $siteConfig->name;?>购物！[<a href="<?php echo IUrl::creatUrl("/simple/logout");?>" class="reg">安全退出</a>]
 			<?php }else{?>
-			<!-- [<a href="<?php echo IUrl::creatUrl("/simple/login?callback=$callback");?>">登录</a><a class="reg" href="<?php echo IUrl::creatUrl("/simple/reg?callback=$callback");?>">免费注册</a>] -->
+			 [<a href="<?php echo IUrl::creatUrl("/simple/login?callback=$callback");?>">登录</a><a class="reg" href="<?php echo IUrl::creatUrl("/simple/reg?callback=$callback");?>">免费注册</a>] 
 			<?php }?>
 			</p>
 		</div>
@@ -86,10 +86,9 @@
 				<tr>
 					<th></th>
 					<td>
-						<!-- <p class="mt_10"><strong class="f14">您还不是<span class="orange"><?php echo $siteConfig->name;?></span>用户</strong></p>
+						<p class="mt_10"><strong class="f14">您还不是<span class="orange"><?php echo $siteConfig->name;?></span>用户</strong></p>
 						<p>现在免费注册成为<?php echo $siteConfig->name;?>商城用户，便能立即享受便宜又放心的购物乐趣。<a class="blue" href="<?php echo IUrl::creatUrl("");?>">网站首页>></a></p>
 						<p class="mt_10"><a class="reg_btn" href="#">注册新用户</a></p>
-						 -->
 					</td>
 				</tr>
 			</table>
@@ -102,7 +101,6 @@
 				<tr>
 					<th></th>
 					<td>
-						<!-- 
 						<p class="mt_10 m_15">
 							<strong class="f14">您还不是<span class="orange"><?php echo $siteConfig->name;?></span>用户</strong><br />
 							<label>使用游客身份结账或注册</label>
@@ -111,7 +109,6 @@
 						<p><label class="attr"><input class="radio" type='radio' name='next_step' value='reg' checked='checked' />注册新用户</label></p>
 						<p class="mt_10 indentation">现在免费注册成为<?php echo $siteConfig->name;?>商城用户，便能立即享受便宜又放心的购物乐趣。<a class="blue" href="<?php echo IUrl::creatUrl("");?>">网站首页>></a></p>
 						<p class="mt_40 f_r"><a class="next_step" href="javascript:next_step();">下一步</a></p>
-						-->
 					</td>
 				</tr>
 			</table>

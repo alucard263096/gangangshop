@@ -49,9 +49,12 @@ class Simple extends IController
     	$username   = IFilter::act(IReq::get('username','post'));
     	$password   = IFilter::act(IReq::get('password','post'));
     	$repassword = IFilter::act(IReq::get('repassword','post'));
+    	$invcode	= IFilter::act(IReq::get('invcode','post'));
     	$captcha    = IFilter::act(IReq::get('captcha','post'));
     	$callback   = IFilter::act(IReq::get('callback'),'text');
     	$message    = '';
+    	
+    	$parentid	= 0;
 
 		/*注册信息校验*/
     	if(IValidate::email($email) == false)
@@ -91,16 +94,33 @@ class Simple extends IController
     				$message = "此用户名已经被注册过，请重新更换";
     			}
     		}
+    		else
+    		{
+    			$where   = 'invcode = "'.$invcode.'"';
+    			$invuserRow = $userObj->getObj($where);
+    			if(empty($invuserRow))
+    			{
+    				$message = '您的邀请码无效，请联系客服';
+    			}
+    			else
+    			{
+    				$parentid=$invuserRow['id'];
+    			}
+    		}
     	}
 
 		//校验通过
     	if($message == '')
     	{
+    		$myinvcode=$this->getMyInvcode($username.'_'.$email);
     		//user表
     		$userArray = array(
     			'username' => $username,
     			'password' => md5($password),
     			'email'    => $email,
+    			'invcode'    => $myinvcode,
+    			'parentid'    => $parentid,
+    			'parentinvcode'    => $invcode,
     		);
     		$userObj->setData($userArray);
     		$user_id = $userObj->add();
@@ -120,6 +140,7 @@ class Simple extends IController
 	    		ISafe::set('username',$username);
 	    		ISafe::set('user_id',$user_id);
 	    		ISafe::set('user_pwd',$userArray['password']);
+	    		ISafe::set('invcode',$myinvcode);
 
 				//自定义跳转页面
 				$callback = $callback ? urlencode($callback) : '';
@@ -139,6 +160,25 @@ class Simple extends IController
 
     		$this->redirect('reg',false);
     		Util::showMessage($message);
+    	}
+    }
+    
+    function getMyInvcode($invcodestr)
+    {
+    	$userObj = new IModel('user');
+    	while(1==1)
+    	{
+    		$invcode = substr(md5($invcodestr),0,8);
+    		$where   = 'invcode = "'.$invcode.'"';
+    		$userRow = $userObj->getObj($where);
+    		if(empty($userRow))
+    		{
+    			return $invcode;
+    		}
+    		else
+    		{
+    			$invcodestr = $invcodestr.'a';
+    		}
     	}
     }
 
@@ -212,6 +252,7 @@ class Simple extends IController
 		ISafe::set('head_ico',$userRow['head_ico']);
 		ISafe::set('user_pwd',$userRow['password']);
 		ISafe::set('last_login',$userRow['last_login']);
+		ISafe::set('invcode',$userRow['invcode']);
 
 		//更新最后一次登录时间
 		$memberObj = new IModel('member');

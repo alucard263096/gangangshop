@@ -1,11 +1,6 @@
 {set:$seo_data=array(); $site_config=new Config('site_config');$site_config=$site_config->getInfo();}
 {set:$seo_data['title']="用户注册_".$site_config['name']}
 {set:seo::set($seo_data);}
-<<script type="text/javascript">
-
-window.location.href="./index.php";
-
-</script>
 <div class="wrapper clearfix">
 	<div class="wrap_box">
 		<h3 class="notice">用户注册</h3>
@@ -20,6 +15,7 @@ window.location.href="./index.php";
 					<tr><th>用户名：</th><td><input class="gray" name='username' type="text" pattern="^[\w\u0391-\uFFE5]{2,20}$" alt="填写2-20个字符，可以为字数，数字下划线和中文" /><label>请填写用户名，格式为2-20个字符，可以为字数，数字下划线和中文</label></td></tr>
 					<tr><th>设置密码：</th><td><input class="gray" type="password" name='password' pattern="^\S{6,32}$" bind='repassword' alt='填写6-32个字符' /><label>填写登录密码，6-32个字符</label></td></tr>
 					<tr><th>确认密码：</th><td><input class="gray" type="password" name='repassword' pattern="^\S{6,32}$" bind='password' alt='重复上面所填写的密码' /><label>重复上面所填写的密码</label></td></tr>
+					<tr><th>邀请码：</th><td><input class="gray" type="text" name='invcode' pattern="^[\w\u0391-\uFFE5]{2,20}$" alt="请联系客服获取邀请码" /><label>请联系客服获取邀请码</label></td></tr>
 					<tr><th>验证码：</th><td><input type='text' class='gray_s' name='captcha' pattern='^\w{5,10}$' alt='填写下面图片所示的字符' /><label>填写下面图片所示的字符</label></td></tr>
 					<tr class="low"><th></th><td><img src='{url:/simple/getCaptcha}' id='captchaImg' /><span class="light_gray">看不清？<a class="link" href="javascript:changeCaptcha('{url:/simple/getCaptcha}');">换一张</a></span></td></tr>
 					<tr><td></td><td><input class="submit_reg" type="submit" value="同意一下条款，提交" /><label></label></td></tr>

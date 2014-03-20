@@ -148,49 +148,22 @@
 	(new adLoader()).load(1,'adHere_1');
 	</script>
 
-	<div class="wrapper clearfix">
-	<div class="wrap_box">
-		<div class="error box clearfix">
-			<table class="form_table prompt_3">
-				<colgroup>
-					<col width="320px" />
-					<col />
-				</colgroup>
-
-				<tbody>
-					<tr>
-						<th><img src="<?php echo IUrl::creatUrl("")."views/".$this->theme."/skin/".$this->skin."/images/front/right.gif";?>" width="48px" height="51px" /></th>
-						<td>
-							<strong class="f14">
-							<?php if(isset($this->showMessage)){?>
-								<?php echo isset($this->showMessage)?$this->showMessage:"";?>
-							<?php }else{?>
-								<?php echo IReq::get('message') ? IFilter::act(IReq::get('message'),'text') : '操作成功！';?>
-							<?php }?>
-							</strong>
-						</td>
-					</tr>
-
-					<tr>
-						<th></th>
-						<td>
-							您现在可以去：
-							<?php $callback = IFilter::act(IReq::get('callback'),'text')?>
-							<?php if($callback){?>
-							<a class="blue" href="<?php echo IUrl::creatUrl("$callback");?>">继续操作 >></a>
-							<?php }?>
-
-							<?php if($this->user['user_id']){?>
-							<a class="blue" href="<?php echo IUrl::creatUrl("/ucenter/index");?>">个人中心 >></a>
-							<?php }?>
-
-							<a class="blue" href="<?php echo IUrl::creatUrl("/site/index");?>">网站首页 >></a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+	<?php $msg = IReq::get('msg') ? IReq::get('msg') : '发生错误'?>
+<div class="error wrapper clearfix">
+	<table class="form_table prompt_3 f_l">
+		<col width="250px" />
+		<col />
+		<tr>
+			<th valign="top"><img src="<?php echo IUrl::creatUrl("")."views/".$this->theme."/skin/".$this->skin."/images/front/cry.gif";?>" width="122" height="98" /></th>
+			<td>
+				<p class="mt_10"><strong class="f14 gray"><?php echo htmlspecialchars($msg,ENT_QUOTES);?></strong></p>
+				<p class="gray">您可以：</p>
+				<p class="gray">1.检查刚才的输入</p>
+				<p class="gray">2.到<a class="blue" href="<?php echo IUrl::creatUrl("/site/help_list");?>">帮助中心</a>寻求帮助</p>
+				<p class="gray">3.去其他地方逛逛：<a href='javascript:void(0)' class='blue' onclick='window.history.go(-1);'>返回上一级操作</a>|<a class="blue" href="<?php echo IUrl::creatUrl("");?>">网站首页</a>|<a class="blue" href="<?php echo IUrl::creatUrl("/ucenter/order");?>">我的订单</a>|<a class="blue" href="<?php echo IUrl::creatUrl("/simple/cart");?>">我的购物车</a></p>
+			</td>
+		</tr>
+	</table>
 </div>
 
 

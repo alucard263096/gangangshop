@@ -1,4 +1,4 @@
-{set:
+﻿{set:
 	$siteConfig = new Config("site_config");
 	$callback   = IReq::get('callback') ? urlencode(IFilter::act(IReq::get('callback'),'url')) : '';
 }
@@ -30,7 +30,7 @@
 			{if:$this->user}
 			{$this->user['username']}您好，欢迎您来到{echo:$siteConfig->name}购物！[<a href="{url:/simple/logout}" class="reg">安全退出</a>]
 			{else:}
-			<!-- [<a href="{url:/simple/login?callback=$callback}">登录</a><a class="reg" href="{url:/simple/reg?callback=$callback}">免费注册</a>] -->
+			 [<a href="{url:/simple/login?callback=$callback}">登录</a><a class="reg" href="{url:/simple/reg?callback=$callback}">免费注册</a>] 
 			{/if}
 			</p>
 		</div>

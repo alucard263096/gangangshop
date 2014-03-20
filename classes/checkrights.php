@@ -63,6 +63,7 @@ class CheckRights
 		$user['username'] = ISafe::get('username');
 		$user['head_ico'] = ISafe::get('head_ico');
 		$user['user_pwd'] = ISafe::get('user_pwd');
+		$user['invcode'] = ISafe::get('invcode');
 	
 		if(self::isValidUser($user['username'],$user['user_pwd']))
 		{
@@ -74,6 +75,7 @@ class CheckRights
 			ISafe::clear('user_pwd');
 			ISafe::clear('username');
 			ISafe::clear('head_ico');
+			ISafe::clear('invcode');
 		}
 	}
 

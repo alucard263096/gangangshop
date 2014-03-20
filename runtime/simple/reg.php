@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 	$siteConfig = new Config("site_config");
 	$callback   = IReq::get('callback') ? urlencode(IFilter::act(IReq::get('callback'),'url')) : '';
 ?>
@@ -9,10 +9,10 @@
 	<title><?php echo $siteConfig->name;?></title>
 	<link type="image/x-icon" href="favicon.ico" rel="icon">
 	<link rel="stylesheet" href="<?php echo IUrl::creatUrl("")."views/".$this->theme."/skin/".$this->skin."/css/index.css";?>" />
-	<script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/jquery/jquery-1.9.0.min.js"></script><script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/autovalidate/validate.js"></script><link rel="stylesheet" type="text/css" href="/iwebshoptest/runtime/systemjs/autovalidate/style.css" />
-	<script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/form/form.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/artdialog/artDialog.js"></script><script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/artdialog/plugins/iframeTools.js"></script><link rel="stylesheet" type="text/css" href="/iwebshoptest/runtime/systemjs/artdialog/skins/default.css" />
+	<script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/jquery/jquery-1.9.0.min.js"></script><script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/autovalidate/validate.js"></script><link rel="stylesheet" type="text/css" href="/gangangshop/runtime/systemjs/autovalidate/style.css" />
+	<script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/form/form.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/artdialog/artDialog.js"></script><script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/artdialog/plugins/iframeTools.js"></script><link rel="stylesheet" type="text/css" href="/gangangshop/runtime/systemjs/artdialog/skins/default.css" />
 	<script type='text/javascript' src="<?php echo IUrl::creatUrl("")."views/".$this->theme."/javascript/common.js";?>"></script>
 	<script type='text/javascript' src='<?php echo IUrl::creatUrl("")."views/".$this->theme."/javascript/site.js";?>'></script>
 </head>
@@ -30,18 +30,13 @@
 			<?php if($this->user){?>
 			<?php echo isset($this->user['username'])?$this->user['username']:"";?>您好，欢迎您来到<?php echo $siteConfig->name;?>购物！[<a href="<?php echo IUrl::creatUrl("/simple/logout");?>" class="reg">安全退出</a>]
 			<?php }else{?>
-			[<a href="<?php echo IUrl::creatUrl("/simple/login?callback=$callback");?>">登录</a><a class="reg" href="<?php echo IUrl::creatUrl("/simple/reg?callback=$callback");?>">免费注册</a>]
+			 [<a href="<?php echo IUrl::creatUrl("/simple/login?callback=$callback");?>">登录</a><a class="reg" href="<?php echo IUrl::creatUrl("/simple/reg?callback=$callback");?>">免费注册</a>] 
 			<?php }?>
 			</p>
 		</div>
 	    <?php $seo_data=array(); $site_config=new Config('site_config');$site_config=$site_config->getInfo();?>
 <?php $seo_data['title']="用户注册_".$site_config['name']?>
 <?php seo::set($seo_data);?>
-<<script type="text/javascript">
-
-window.location.href="./index.php";
-
-</script>
 <div class="wrapper clearfix">
 	<div class="wrap_box">
 		<h3 class="notice">用户注册</h3>
@@ -56,6 +51,7 @@ window.location.href="./index.php";
 					<tr><th>用户名：</th><td><input class="gray" name='username' type="text" pattern="^[\w\u0391-\uFFE5]{2,20}$" alt="填写2-20个字符，可以为字数，数字下划线和中文" /><label>请填写用户名，格式为2-20个字符，可以为字数，数字下划线和中文</label></td></tr>
 					<tr><th>设置密码：</th><td><input class="gray" type="password" name='password' pattern="^\S{6,32}$" bind='repassword' alt='填写6-32个字符' /><label>填写登录密码，6-32个字符</label></td></tr>
 					<tr><th>确认密码：</th><td><input class="gray" type="password" name='repassword' pattern="^\S{6,32}$" bind='password' alt='重复上面所填写的密码' /><label>重复上面所填写的密码</label></td></tr>
+					<tr><th>邀请码：</th><td><input class="gray" type="text" name='invcode' pattern="^[\w\u0391-\uFFE5]{2,20}$" alt="请联系客服获取邀请码" /><label>请联系客服获取邀请码</label></td></tr>
 					<tr><th>验证码：</th><td><input type='text' class='gray_s' name='captcha' pattern='^\w{5,10}$' alt='填写下面图片所示的字符' /><label>填写下面图片所示的字符</label></td></tr>
 					<tr class="low"><th></th><td><img src='<?php echo IUrl::creatUrl("/simple/getCaptcha");?>' id='captchaImg' /><span class="light_gray">看不清？<a class="link" href="javascript:changeCaptcha('<?php echo IUrl::creatUrl("/simple/getCaptcha");?>');">换一张</a></span></td></tr>
 					<tr><td></td><td><input class="submit_reg" type="submit" value="同意一下条款，提交" /><label></label></td></tr>
