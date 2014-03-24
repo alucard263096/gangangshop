@@ -20,10 +20,10 @@ class Site extends IController
 	function init()
 	{
 		CheckRights::checkUserRights();
-		//$user_id = ($this->user['user_id'] == null) ? 0 : $this->user['user_id'];
-		//if($user_id==0){
-		//	$this->redirect('/simple/login?tourist&callback=/simple/cart2');
-		//}
+		$user_id = ($this->user['user_id'] == null) ? 0 : $this->user['user_id'];
+		if($user_id==0){
+			$this->redirect('/simple/login?tourist&callback=/site');
+		}
 	}
 
 	function index()

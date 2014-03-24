@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 	$siteConfig = new Config("site_config");
 	$callback   = IReq::get('callback') ? urlencode(IFilter::act(IReq::get('callback'),'url')) : '';
 ?>
@@ -9,10 +9,10 @@
 	<title><?php echo $siteConfig->name;?></title>
 	<link type="image/x-icon" href="favicon.ico" rel="icon">
 	<link rel="stylesheet" href="<?php echo IUrl::creatUrl("")."views/".$this->theme."/skin/".$this->skin."/css/index.css";?>" />
-	<script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/jquery/jquery-1.9.0.min.js"></script><script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/autovalidate/validate.js"></script><link rel="stylesheet" type="text/css" href="/iwebshoptest/runtime/systemjs/autovalidate/style.css" />
-	<script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/form/form.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/artdialog/artDialog.js"></script><script type="text/javascript" charset="UTF-8" src="/iwebshoptest/runtime/systemjs/artdialog/plugins/iframeTools.js"></script><link rel="stylesheet" type="text/css" href="/iwebshoptest/runtime/systemjs/artdialog/skins/default.css" />
+	<script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/jquery/jquery-1.9.0.min.js"></script><script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/jquery/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/autovalidate/validate.js"></script><link rel="stylesheet" type="text/css" href="/gangangshop/runtime/systemjs/autovalidate/style.css" />
+	<script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/form/form.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/artdialog/artDialog.js"></script><script type="text/javascript" charset="UTF-8" src="/gangangshop/runtime/systemjs/artdialog/plugins/iframeTools.js"></script><link rel="stylesheet" type="text/css" href="/gangangshop/runtime/systemjs/artdialog/skins/default.css" />
 	<script type='text/javascript' src="<?php echo IUrl::creatUrl("")."views/".$this->theme."/javascript/common.js";?>"></script>
 	<script type='text/javascript' src='<?php echo IUrl::creatUrl("")."views/".$this->theme."/javascript/site.js";?>'></script>
 </head>
@@ -30,7 +30,7 @@
 			<?php if($this->user){?>
 			<?php echo isset($this->user['username'])?$this->user['username']:"";?>您好，欢迎您来到<?php echo $siteConfig->name;?>购物！[<a href="<?php echo IUrl::creatUrl("/simple/logout");?>" class="reg">安全退出</a>]
 			<?php }else{?>
-			<!-- [<a href="<?php echo IUrl::creatUrl("/simple/login?callback=$callback");?>">登录</a><a class="reg" href="<?php echo IUrl::creatUrl("/simple/reg?callback=$callback");?>">免费注册</a>] -->
+			 [<a href="<?php echo IUrl::creatUrl("/simple/login?callback=$callback");?>">登录</a><a class="reg" href="<?php echo IUrl::creatUrl("/simple/reg?callback=$callback");?>">免费注册</a>] 
 			<?php }?>
 			</p>
 		</div>
