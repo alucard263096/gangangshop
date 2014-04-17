@@ -168,7 +168,7 @@ class Simple extends IController
     	$userObj = new IModel('user');
     	while(1==1)
     	{
-    		$invcode = substr(md5($invcodestr),0,8);
+    		$invcode = substr(md5($invcodestr),0,6);
     		$where   = 'invcode = "'.$invcode.'"';
     		$userRow = $userObj->getObj($where);
     		if(empty($userRow))

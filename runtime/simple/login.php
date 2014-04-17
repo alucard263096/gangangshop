@@ -105,7 +105,7 @@
 							<strong class="f14">您还不是<span class="orange"><?php echo $siteConfig->name;?></span>用户</strong><br />
 							<label>使用游客身份结账或注册</label>
 						</p>
-						<p><label class="attr"><input class="radio" type='radio' name='next_step' value='acount' />使用游客身份结账</label></p>
+						<!-- <p><label class="attr"><input class="radio" type='radio' name='next_step' value='acount' />使用游客身份结账</label></p> -->
 						<p><label class="attr"><input class="radio" type='radio' name='next_step' value='reg' checked='checked' />注册新用户</label></p>
 						<p class="mt_10 indentation">现在免费注册成为<?php echo $siteConfig->name;?>商城用户，便能立即享受便宜又放心的购物乐趣。<a class="blue" href="<?php echo IUrl::creatUrl("");?>">网站首页>></a></p>
 						<p class="mt_40 f_r"><a class="next_step" href="javascript:next_step();">下一步</a></p>
